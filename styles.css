@@ -1,0 +1,606 @@
+@font-face {
+    font-family: Poppins;
+    src: url(./fonts/Poppins-Regular.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    font-family: Poppins, Tahoma, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+::selection{
+    color: #fff;
+    background: #333;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    background: #f2f2f2;
+}
+::-webkit-scrollbar-thumb{
+    background: #aaa;
+}
+a{text-decoration: none;color: #000;}
+#home{
+    /* position: relative; */
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+
+    background: url('./img/pexels-pixabay-209266.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* #home img{
+    position: fixed;
+    width: 100%;
+    object-fit:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+#home::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0, 0, 0, 0.6); */
+    background: linear-gradient(to right, rgba(89, 128, 255,0.4), rgb(255, 147, 104));
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    z-index: 3;
+    font-family: Poppins;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.header-links a{
+    color: #fff;
+    margin-left: 20px;
+    position: relative;
+}
+.header-links a::after{
+    content: '';
+    width: 0%;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    z-index: 3;
+    bottom: -2px;
+    left: 0;
+    border-radius: 50px;
+    transition: width .3s;
+}
+.header-links a:hover::after{
+    width: 100%;
+}
+
+
+
+
+#home #overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#overlay h1{
+    font-size: 5rem;
+    font-weight: 300;
+    font-style: oblique;
+    text-transform: uppercase;
+    animation: appear 1s linear;
+}
+#overlay h2{
+    font-weight: 300;
+    animation: appear 1s linear;
+}
+#overlay a{
+    animation: appear 1s linear;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    /* color: #000; */
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 8px 20px;
+    transition: .3s;
+    margin-top: 12px;
+}
+#overlay a:hover{
+    color: #000;
+    background: #fff;
+    box-shadow: 0 5px 5px #000;
+    transform: translateY(-5px);
+}
+
+
+
+
+
+
+
+
+#about{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 80vh;
+    background: #f1f1f1;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-img{width: calc(50vw - 50px);}
+.about{width: 35vw;font-family: Poppins;}
+.about-img img{
+    width: 35vw;
+}
+.about h1{
+    margin-bottom: 15px;
+}
+.about p{
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.divisor{
+    position: relative;
+    width: 100%;
+    height: 25px;
+    background: linear-gradient(to right, rgba(89, 128, 255,0.4), rgb(255, 147, 104));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#gallery{
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+}
+#gallery h1{
+    text-align: center;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+.gallery-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.gallery-img{
+    width: 30vw;
+    height: 280px;
+    overflow: hidden;
+}
+.gallery-img img{
+    width: 30vw;
+}
+.gallery-img:nth-child(1) img{
+    object-position: 0 -50px; /*this centers the second image's alignment in the y axis by 50px, because it was too big    :/ */
+
+}
+.gallery-txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+}
+.gallery-txt p{
+    text-align: center;
+    width: 35vw;
+}
+.gallery-item.itemB{
+    flex-direction: row-reverse;
+}
+#gallery .gallery-item.itemA:last-child{
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+.contact{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 30vh;
+    background: url('./img/pexels-anete-lusina-4792479.jpg');
+    background-attachment: fixed;
+    background-position: 0 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.contact::after{
+    content: '';
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.contact-me{
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-me a{
+    padding: 12px 20px;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    transition: background .5s;
+}
+.contact-me a:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background: #333;
+    padding: 15px 0;
+}
+footer .links img{
+    width: 32px;
+    opacity: 0.6;
+    margin: 0 8px;
+}
+footer .links img:hover{
+    opacity: 1;
+}
+footer p{color: #888;}
+
+
+
+
+.leftAnim{
+    animation: appearingLeft 1s linear;
+}
+.rightAnim{
+    animation: appearingRight 1s linear;
+}
+
+
+
+.back-button{
+    position: fixed;
+    z-index: 20;
+    background: #fff;
+    filter: drop-shadow(0 2px 3px #ccc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    bottom: 10px;
+    transform: translateY(200px);
+    right: 10px;
+    padding: 30px;
+
+    transition: transform .5s ease;
+}
+.back-button img{
+    filter: invert(1);
+}
+.is-visible{
+    transform: translateY(0);
+    bottom: 12px;
+}
+
+.wrapper{height: 100%;width: 100%;margin-top: 1px;}
+@keyframes btt { /*back to top*/
+    0%{transform: translateY(200px);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+        transform: translateY(90px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes appearingLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes appearingRight {
+    0%{
+        opacity: 0;
+        transform: translateX(300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media(prefers-reduced-motion){
+    section{
+        transition: none;
+    }
+}
+
+@media (max-width:1024px){
+    
+
+#gallery{
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    padding: 0 0 80px 0;
+}
+#gallery h1{
+    text-align: center;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+.gallery-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+.gallery-img{
+    width: 50vw;
+    height: 280px;
+    overflow: hidden;
+}
+.gallery-img img{
+    width: 100%;
+    object-fit: cover;
+}
+.gallery-txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.gallery-txt p{
+    text-align: center;
+    width: 100%;
+}
+.gallery-item.itemB{
+    flex-direction: column;
+}
+#gallery .gallery-item.itemA:last-child{
+    margin-bottom: 0px;
+}
+
+
+
+}
+
+@media (max-width: 480px){
+    #home::after{
+        background: linear-gradient(to right, rgba(89, 128, 255,0.4), rgba(255, 147, 104,0.4));
+    }
+    header{
+        display: none;
+    }
+    #overlay h1,#overlay h2{
+        filter: drop-shadow(-2px 2px 2px #000);
+    }
+    #overlay h1{
+        font-size: 3rem;
+    }
+
+
+    
+#about{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 80%;
+    background: #f1f1f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.about-img{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-img img{
+    width: 100%;
+    object-fit: cover;
+}
+.about{
+    width: 100%;
+}
+.about h1{
+    margin: 15px 0;
+}
+.about p{
+    font-size: 12px;
+}
+
+
+
+
+#gallery{
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    padding: 0 0 80px 0;
+}
+#gallery h1{
+    text-align: center;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+.gallery-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+.gallery-img{
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+}
+.gallery-img img{
+    width: 100%;
+    object-fit: cover;
+}
+.gallery-txt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.gallery-txt p{
+    text-align: center;
+    width: 100%;
+}
+.gallery-item.itemB{
+    flex-direction: column;
+}
+#gallery .gallery-item.itemA:last-child{
+    margin-bottom: 0px;
+}
+
+
+
+
+
+.contact{
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 30vh;
+    background: url('./img/pexels-anete-lusina-4792479.jpg');
+    background-attachment: fixed;
+    background-position: 0 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.contact::after{
+    content: '';
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.contact-me{
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-me a{
+    padding: 12px 20px;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    transition: background .5s;
+}
+.contact-me a:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+}
